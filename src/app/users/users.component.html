@@ -1,0 +1,17 @@
+
+
+<div id="mySidenav" class="sidenav" >
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a *ngIf="room">Meeting no:{{room}}</a>
+  <div *ngFor="let user of users">
+  	<a  *ngIf="user.username!=self;else block">{{user.username}}</a>
+        <ng-template #block>
+	    	<a>You ({{user.username}})</a>
+    	</ng-template>	
+  </div>
+</div>
+
+<div id="main">
+  <span style="font-size:30px;cursor:pointer;position: fixed;top:0;margin-top: 2%" (click)="openNav()">&#9776;</span>
+</div>
+

@@ -1,0 +1,32 @@
+<div class="container" >
+		<div class="row" #scrollMe style="overflow: scroll; height:690px;overflow:hidden;">
+			<div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-12 comments-main pt-4 rounded mb-4">
+				<ul class="p-0" *ngFor="let message of messages">
+					<li>
+						<div class="row comments mb-2">
+							<div class="col-md-2 col-sm-2 col-1 ">
+						    </div>
+							<div class="col-md-9 col-sm-9 col-9 comment rounded mb-2">
+								<h4 class="m-0" *ngIf="message.user!=user;">{{message.user}}</h4>
+							    	<h4 *ngIf="message.user==user" class="m-0">You ({{message.user}})</h4>
+							    	<p *ngIf="message.info" class="m-0">{{message.info}}</p>
+							    <p class="mb-0 text-white">{{message.message}}</p>
+							    <p class="text-white ml-3" style="text-align: end;">{{message.createdAt}}</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="row col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-12 comment-box-main p-3 rounded" 
+				style="position:fixed;bottom:0;left:0;text-align: center;">
+			  		<div class="col-md-9 col-sm-9 col-9 pr-0 comment-box">
+					  <input type="text" class="form-control" [(ngModel)]="message" (keyup)="$event.keyCode == 13&&send()" placeholder="Type your message ...." />
+			  		</div>
+			  		<div class="col-md-3 col-sm-2 col-2 pl-0 text-center send-btn">
+			  			<button class="btn btn-info" (click)="send()" >Send</button>
+			  		</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<app-users [self]="user"></app-users>
