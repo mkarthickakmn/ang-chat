@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { UsersComponent } from './users/users.component';
 import { ChatService } from './chat.service';
+import { environment } from 'src/environments/environment';
+import { NgxAgoraModule } from 'ngx-agora';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +22,8 @@ import { ChatService } from './chat.service';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
-  ],
+    FormsModule,
+    NgxAgoraModule.forRoot({ AppID: environment.agora.appId })  ],
   providers: [],
   bootstrap: [AppComponent]
 })

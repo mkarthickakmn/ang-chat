@@ -5,7 +5,7 @@ import{tap,take} from 'rxjs/operators';
 import {Router} from '@angular/router'
 @Injectable({providedIn:'root'})
 export class ChatService {
-    private url = '/';
+    private url = 'https://localhost:3000';
     private socket;
     constructor(private router:Router) {
 
