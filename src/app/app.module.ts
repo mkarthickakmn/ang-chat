@@ -11,7 +11,7 @@ import { ChatService } from './chat.service';
 import { AngularAgoraRtcModule, AgoraConfig } from 'angular-agora-rtc'; // Add
 
 const agoraConfig: AgoraConfig = {
-  AppID: '4fdf601cc66643879aaa7b944e2a391f',
+  AppID: 'd245c63ae953463bbdc026d6713fdb43',
 };
 @NgModule({
   declarations: [

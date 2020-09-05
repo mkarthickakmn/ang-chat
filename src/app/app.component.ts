@@ -19,7 +19,7 @@ export class AppComponent {
 
   // Add
   startCall() {
-    this.agoraService.client.join('0064fdf601cc66643879aaa7b944e2a391fIADO4+aOI1FATICNBbdl0MVANsauxkMsRAGnNX7vFaGTGxw69csAAAAAEABfsrtbd5BUXwEAAQB5kFRf', '12345', null, (uid) => {
+    this.agoraService.client.join(null, '12345', null, (uid) => {
       this.localStream = this.agoraService.createStream(uid, true, null, null, true, false);
       this.localStream.setVideoProfile('720p_3');
       this.subscribeToStreams();
