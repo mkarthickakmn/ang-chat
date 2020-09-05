@@ -8,9 +8,11 @@ import { LoginComponent } from './login/login.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { UsersComponent } from './users/users.component';
 import { ChatService } from './chat.service';
-import { environment } from 'src/environments/environment';
-import { NgxAgoraModule } from 'ngx-agora';
+import { AngularAgoraRtcModule, AgoraConfig } from 'angular-agora-rtc'; // Add
 
+const agoraConfig: AgoraConfig = {
+  AppID: '4fdf601cc66643879aaa7b944e2a391f',
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { NgxAgoraModule } from 'ngx-agora';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    NgxAgoraModule.forRoot({ AppID: environment.agora.appId })  ],
+     AngularAgoraRtcModule.forRoot(agoraConfig) // Add
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
